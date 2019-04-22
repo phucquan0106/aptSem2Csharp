@@ -11,6 +11,86 @@ namespace CsharpAssignment2
     {
         static void Main(string[] args)
         {
+            List<Product> pList = new List<Product>();
+            string choice;
+            string exit;
+            Cart cart = new Cart(1,"Sir/Madam",0,pList,"Hanoi","Vietnam");
+
+            while (true)
+            {
+                Console.WriteLine("=========MENU========");
+                Console.WriteLine("1. Add to cart.");
+                Console.WriteLine("2. Delete product by product ID.");
+                Console.WriteLine("3. Check Grand Total.");
+                Console.WriteLine("4. Exit");
+                Console.WriteLine("Your choice: ");
+                choice = Console.ReadLine().Trim();
+                switch (choice)
+                {
+                    case ("1")://================Add to cart==============
+                        cart.addCart();
+
+                        Console.WriteLine("Enter number 1 to go back Menu or any other to EXIT");
+                        exit = Console.ReadLine().Trim();
+                        if (exit.Equals("1"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    case ("2")://================Delete product by product ID==============
+                        Console.WriteLine("Please input product ID to delete: ");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        cart.deleteProduct(id);
+
+                        Console.WriteLine("Enter number 1 to go back Menu or any other to EXIT");
+                        exit = Console.ReadLine().Trim();
+                        if (exit.Equals("1"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    case ("3")://================Check Grand Total==============
+                        Console.WriteLine("Grand total: "+cart.checkTotal());                       
+
+                        Console.WriteLine("Enter number 1 to go back Menu or any other to EXIT");
+                        exit = Console.ReadLine().Trim();
+                        if (exit.Equals("1"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    
+                    case ("4")://===================Exit====================
+                        return;
+
+                    default://=============Wrong Choice==============
+                        Console.WriteLine("Wrong Choice!");
+                        Console.WriteLine("Enter number 1 to go back Menu or any other to EXIT");
+                        exit = Console.ReadLine().Trim();
+                        if (exit.Equals("1"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                }
+            }
+        }
+
+        static void MainLabAssignment2(string[] args)
+        {
             Product product = null;
             string choice;
             string exit;
