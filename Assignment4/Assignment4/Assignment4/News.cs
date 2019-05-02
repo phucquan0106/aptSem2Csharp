@@ -36,7 +36,7 @@ namespace Assignment4
 
         public void Calculate()
         {
-            this.AverageRate = (RateList[0] + RateList[1] + RateList[2]) / 3;
+            this.AverageRate = (float)(RateList[0] + RateList[1] + RateList[2]) / 3;
         }
 
     }
